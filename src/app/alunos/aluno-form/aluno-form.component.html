@@ -1,0 +1,34 @@
+<h2>{{ title }}</h2>
+<hr/>
+
+
+<section id="form">
+  <form (ngSubmit)="onsubmit()" #formAluno="ngForm">
+    <div class="mb-3">
+      <input type="number"[(ngModel)]="aluno.matricula" name="matricula" class="form-control" placeholder="Matrícula">
+    </div>
+      <div class="mb-3">
+        <input type="text"[(ngModel)]="aluno.nome" name="nome" class="form-control" placeholder="Nome">
+      </div>
+      <div class="mb-3">
+        <input type="text"[(ngModel)]="aluno.sobrenome" name="sobrenome" class="form-control" placeholder="Sobrenome">
+      </div>
+      <div class="mb-3">
+        <input type="text"[(ngModel)]="aluno.cpf" name="cpf" class="form-control" placeholder="CPF">
+      </div>
+      <div class="mb-3">
+        <input type="date"[(ngModel)]="aluno.dataNascimento" name="dataNascimento" class="form-control" placeholder="Data de Nascimento">
+      </div>
+      <div class="mb-3">
+        <input type="text"[(ngModel)]="aluno.curso" name="curso" class="form-control" placeholder="Curso">
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="aluno.status" name="status" id="status" checked>
+        <label class="form-check-label" for="status">
+          Status
+        </label>
+      </div>
+      <button type="submit" class="btn btn-success mr-2 mt-3">Salvar</button>
+      <button type="button" class="btn btn-secondary mt-3" [routerLink]="['']">Cancelar</button>
+  </form>
+</section>

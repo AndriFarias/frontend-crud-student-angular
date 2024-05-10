@@ -1,0 +1,11 @@
+.aluno-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.aluno-item-nome{
+  flex-grow: 1;
+}
+.novobtn{
+ margin-bottom: 10px;
+}

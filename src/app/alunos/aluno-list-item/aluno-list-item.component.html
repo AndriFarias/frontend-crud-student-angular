@@ -1,0 +1,24 @@
+<table class="table">
+<tbody>
+  <tr>
+    <td [innerHtml]="aluno.matricula" class="aluno-item-nome" id="matricula"></td>
+    <td [innerHtml]="aluno.nome" class="aluno-item-nome"
+    [ngClass]="aluno.status ? 'aluno-status' : ''"></td>
+    <td [innerHtml]="aluno.sobrenome" class="aluno-item-nome"></td>
+    <td [innerHtml]="aluno.cpf" class="aluno-item-nome"></td>
+    <td [innerHtml]="aluno.dataNascimento" class="aluno-item-nome"></td>
+    <td [innerHtml]="aluno.curso" class="aluno-item-nome"></td>
+    <td><input type="checkbox" class="form-check-input" [(ngModel)]="aluno.status" (change)="onStatusCheckChange(aluno)" disabled=""></td>
+    <td>
+        <button type="button" [routerLink]="['edit/',aluno._id]" class="btn btn-warning">
+            Editar
+        </button>
+
+      <button type="button" class="btn btn-danger" (click)="remove(aluno)">
+          Excluir
+      </button>
+
+    </td>
+  </tr>
+</tbody>
+</table>

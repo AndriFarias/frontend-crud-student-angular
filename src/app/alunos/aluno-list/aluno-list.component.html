@@ -1,0 +1,19 @@
+<h2>Alunos</h2>
+<hr/>
+
+
+<button type="button" class="btn btn-success novobtn" [routerLink]="['/new']">
+  Novo aluno
+</button>
+
+<section>
+  <div *ngIf="alunos.length == 0" class="alert alert-warning" role="alert">
+    Nenhum aluno cadastrado ainda.
+  </div>
+  <ul class="list-group" *ngIf="alunos.length > 0">
+    <li class="list-group-item aluno-item" *ngFor="let aluno of alunos">
+      <app-aluno-list-item [aluno]="aluno" class="aluno-item aluno-item-nome" (onDeleteAluno)="onAlunoDeleted($event)"></app-aluno-list-item>
+    </li>
+  </ul>
+</section>
+
